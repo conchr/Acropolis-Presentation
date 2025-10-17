@@ -27,7 +27,7 @@
 
         .presentation-container {
             width: 95%;
-            max-width: 1200px;
+            max-width: 1400px;
             height: 85vh;
             min-height: 500px;
             background-color: #f5f1e6;
@@ -96,6 +96,9 @@
             margin-bottom: 20px;
             font-size: 2.4em;
             font-weight: 700;
+            line-height: 1.2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .slide-text {
@@ -109,15 +112,22 @@
         .slide-footer {
             padding-top: 20px;
             border-top: 1px solid #d4c9b1;
-            text-align: right;
+            text-align: center;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
         }
         
         .nav-button {
-            padding: 12px 25px;
-            font-size: 1.05em;
+            padding: 10px 20px;
+            font-size: 0.9em;
             cursor: pointer;
             border: none;
             border-radius: 8px;
@@ -156,6 +166,9 @@
             margin-top: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .slide-cover h2 {
@@ -163,6 +176,7 @@
             color: #8b6b4c;
             margin-bottom: 30px;
             font-weight: 600;
+            line-height: 1.2;
         }
         
         .slide-cover p {
@@ -183,6 +197,10 @@
             font-size: 3.2em;
             color: #5d4037;
             margin-bottom: 40px;
+            margin-top: 80px;
+            line-height: 1.2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .final-slide-buttons {
@@ -303,10 +321,99 @@
             margin-bottom: 30px;
         }
 
+        /* Νέο στυλ για την επικεφαλίδα ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ */
+        .municipality-header {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 0.9em;
+            color: #8b6b4c;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Νέο κουμπί Επιστροφή στην Κεντρική Σελίδα */
+        .central-page-button {
+            padding: 10px 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #4a6baf;
+            color: white;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+        
+        .central-page-button:hover {
+            background-color: #3a5a9f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Βελτιστοποίηση για Smart TV */
+        @media (min-width: 1920px) {
+            .presentation-container {
+                max-width: 1800px;
+                height: 90vh;
+            }
+            
+            .slide {
+                padding: 60px 80px;
+            }
+            
+            .slide-title {
+                font-size: 3em;
+            }
+            
+            .slide-text {
+                font-size: 1.4em;
+            }
+            
+            .slide-cover h1 {
+                font-size: 4.5em;
+            }
+            
+            .slide-cover h2 {
+                font-size: 2.8em;
+            }
+            
+            .final-slide h1 {
+                font-size: 4em;
+            }
+            
+            .nav-button, .central-page-button {
+                font-size: 1.1em;
+                padding: 15px 25px;
+            }
+            
+            .final-slide-buttons button {
+                font-size: 1.5em;
+                padding: 20px 40px;
+            }
+            
+            table {
+                font-size: 1.1em;
+            }
+            
+            th, td {
+                padding: 20px;
+            }
+            
+            .slide-9-text {
+                font-size: 32px;
+            }
+        }
+
         @media (max-width: 768px) {
             .presentation-container {
                 width: 98%;
                 height: 90vh;
+                max-width: 100%;
             }
             
             .slide {
@@ -332,6 +439,7 @@
             
             .final-slide h1 {
                 font-size: 1.8em;
+                margin-top: 40px;
             }
             
             .final-slide-buttons {
@@ -347,18 +455,44 @@
                 font-size: 1.1em;
             }
             
-            .nav-button {
-                padding: 10px 15px;
-                font-size: 0.9em;
+            .nav-button, .central-page-button {
+                padding: 8px 15px;
+                font-size: 0.85em;
             }
             
             /* Προσαρμογή για κινητά στη σελίδα 9 */
             .slide-9-text {
                 font-size: 18px;
             }
+
+            .municipality-header {
+                font-size: 0.8em;
+                left: 15px;
+                top: 10px;
+            }
+            
+            /* Βελτιστοποίηση πίνακα για κινητά */
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
         }
 
         @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .presentation-container {
+                height: 95vh;
+                width: 100%;
+            }
+            
+            .slide {
+                padding: 15px;
+            }
+            
             .slide-title {
                 font-size: 1.5em;
             }
@@ -375,9 +509,132 @@
                 font-size: 0.95em;
             }
             
+            .final-slide h1 {
+                font-size: 1.6em;
+                margin-top: 30px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+            
+            .nav-button, .central-page-button {
+                width: 100%;
+                justify-content: center;
+            }
+            
             /* Περαιτέρω μείωση για πολύ μικρές οθόνες στη σελίδα 9 */
             .slide-9-text {
                 font-size: 16px;
+            }
+
+            .municipality-header {
+                font-size: 0.75em;
+                left: 10px;
+                top: 8px;
+            }
+            
+            /* Βελτιστοποίηση για πολύ μικρές οθόνες */
+            table {
+                font-size: 0.85em;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .slide {
+                padding: 10px;
+            }
+            
+            .slide-title {
+                font-size: 1.3em;
+            }
+            
+            .slide-cover h1 {
+                font-size: 1.5em;
+            }
+            
+            .slide-cover h2 {
+                font-size: 1.1em;
+            }
+            
+            .slide-text {
+                font-size: 0.9em;
+            }
+            
+            .final-slide h1 {
+                font-size: 1.4em;
+            }
+            
+            .nav-button, .central-page-button {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+        }
+
+        /* Προσαρμογή μεγέθους γραμματοσειράς για μεγάλες επικεφαλίδες */
+        @media (max-width: 1200px) {
+            .slide-title {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .slide-title {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slide-title {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .slide-title {
+                font-size: 1.4em;
+            }
+        }
+
+        /* Βελτιστοποίηση για οριζόντια κινητά */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .presentation-container {
+                height: 95vh;
+            }
+            
+            .slide {
+                padding: 15px 30px;
+            }
+            
+            .slide-title {
+                font-size: 1.6em;
+                margin-bottom: 10px;
+            }
+            
+            .slide-text {
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+            
+            .slide-footer {
+                padding-top: 10px;
+            }
+            
+            .nav-button, .central-page-button {
+                padding: 6px 12px;
+                font-size: 0.8em;
             }
         }
     </style>
@@ -391,6 +648,7 @@
 
     <!-- Slide 1: Κάλυμμα -->
     <div class="slide slide-cover active" id="slide-1">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h1>Η Ακρόπολη των Φαρσάλων</h1>
             <h2>Ένας Φάρος Ιστορίας στη Θεσσαλία</h2>
@@ -400,8 +658,7 @@
             </div>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 1 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-1" onclick="changeSlide(-1)" disabled>
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -409,11 +666,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 1 από 10</div>
         </div>
     </div>
 
     <!-- Slide 2: Η Αρχαία Φάρσαλος και η Ακρόπολη -->
     <div class="slide" id="slide-2">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h2 class="slide-title">Η Αρχαία Φάρσαλος και η Ακρόπολη</h2>
             <p class="slide-text">
@@ -431,8 +693,7 @@
             </ul>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 2 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-2" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -440,11 +701,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 2 από 10</div>
         </div>
     </div>
 
     <!-- Slide 3: Προϊστορική Κατοίκηση και Μυθική Σύνδεση -->
     <div class="slide" id="slide-3">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h2 class="slide-title">Προϊστορική Κατοίκηση και Μυθική Σύνδεση</h2>
             <ul>
@@ -453,8 +719,7 @@
             </ul>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 3 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-3" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -462,11 +727,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 3 από 10</div>
         </div>
     </div>
     
     <!-- Slide 4: Περιγραφή του Χώρου -->
     <div class="slide" id="slide-4">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h2 class="slide-title">Περιγραφή του Χώρου</h2>
             <ul>
@@ -477,8 +747,7 @@
             </ul>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 4 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-4" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -486,11 +755,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 4 από 10</div>
         </div>
     </div>
 
     <!-- Slide 5: Φάσεις Οχύρωσης -->
     <div class="slide" id="slide-5">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h2 class="slide-title">Φάσεις Οχύρωσης</h2>
             <p class="slide-text">Διακρίνονται τουλάχιστον <strong>3 κύριες φάσεις</strong> οχύρωσης:</p>
@@ -501,8 +775,7 @@
             </ul>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 5 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-5" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -510,11 +783,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 5 από 10</div>
         </div>
     </div>
 
     <!-- Slide 6: Ιστορική Εξέλιξη (Προϊστορία - Ρωμαϊκή Εποχή) -->
     <div class="slide" id="slide-6">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h2 class="slide-title">Ιστορική Εξέλιξη (Προϊστορία - Ρωμαϊκή Εποχή)</h2>
             <p class="slide-text">Σημαντικά γεγονότα και ευρήματα στην Ακρόπολη και την πόλη:</p>
@@ -546,8 +824,7 @@
             </table>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 6 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-6" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -555,11 +832,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 6 από 10</div>
         </div>
     </div>
 
     <!-- Slide 7: Ιστορική Εξέλιξη (Βυζάντιο - Μετα-Βυζάντιο) -->
     <div class="slide" id="slide-7">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h2 class="slide-title">Ιστορική Εξέλιξη (Βυζάντιο - Μετα-Βυζάντιο)</h2>
             <p class="slide-text">Σημαντικά γεγονότα και ευρήματα στην Ακρόπολη και την πόλη:</p>
@@ -586,8 +868,7 @@
             </table>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 7 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-7" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -595,11 +876,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 7 από 10</div>
         </div>
     </div>
 
     <!-- Slide 8: Αρχαιολογική Σημασία και Ανάδειξη -->
     <div class="slide" id="slide-8">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h2 class="slide-title">Αρχαιολογική Σημασία και Ανάδειξη</h2>
             <p class="slide-text">
@@ -619,8 +905,7 @@
             </ul>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 8 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-8" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -628,11 +913,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 8 από 10</div>
         </div>
     </div>
     
     <!-- Slide 9: Συμπέρασμα -->
     <div class="slide" id="slide-9">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <p class="slide-9-text">
                 Η <strong>Ακρόπολη των Φαρσάλων</strong> είναι ένα διαχρονικό οχυρωματικό έργο που αποτελεί <strong>ζωντανή μαρτυρία της μακραίωνης ιστορίας της πόλης</strong>, από τη μυθική Φθία μέχρι τη Βυζαντινή καστροπολιτεία.
@@ -642,8 +932,7 @@
             </p>
         </div>
         <div class="slide-footer">
-            <div class="slide-counter">Σελίδα 9 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-9" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -651,11 +940,16 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 9 από 10</div>
         </div>
     </div>
 
     <!-- Slide 10: Τέλος/Ερωτήσεις -->
     <div class="slide final-slide" id="slide-10">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ</div>
         <div class="slide-content">
             <h1>Σας ευχαριστούμε που παρακολουθήσατε την παρουσίαση!</h1>
         </div>
@@ -673,8 +967,7 @@
             <i class="fas fa-info-circle"></i> Πατήστε το βέλος αριστερά για να επιστρέψετε στην αρχή
         </div>
         <div class="slide-footer" style="width: 100%;">
-            <div class="slide-counter">Σελίδα 10 από 10</div>
-            <div>
+            <div class="nav-buttons">
                 <button class="nav-button" id="prev-btn-10" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
@@ -682,6 +975,10 @@
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Επιστροφή στην Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 10 από 10</div>
         </div>
     </div>
 </div>
