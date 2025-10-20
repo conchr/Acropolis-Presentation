@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Η Ακρόπολη των Φαρσάλων | Παρουσίαση</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Η Ακρόπολη των Φαρσάλων | Διαδραστική Παρουσίαση</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-brown: #5d4037;
+            --secondary-brown: #8b6b4c;
+            --light-beige: #f5f1e6;
+            --accent-green: #5d8c5d;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -15,7 +23,7 @@
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: #e8dfca;
+            background: linear-gradient(135deg, #e8dfca 0%, #d9cfb8 100%);
             color: #333;
             display: flex;
             justify-content: center;
@@ -30,15 +38,15 @@
             max-width: 1400px;
             height: 85vh;
             min-height: 500px;
-            background-color: #f5f1e6;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background-color: var(--light-beige);
+            box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
             background-image: 
-                linear-gradient(rgba(245, 241, 230, 0.8), rgba(245, 241, 230, 0.8)),
+                linear-gradient(rgba(245, 241, 230, 0.9), rgba(245, 241, 230, 0.9)),
                 url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
             border: 1px solid #d4c9b1;
         }
@@ -48,11 +56,12 @@
             height: 6px;
             background-color: #d4c9b1;
             position: relative;
+            z-index: 10;
         }
 
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #8b6b4c, #a88c6f);
+            background: linear-gradient(90deg, var(--secondary-brown), #a88c6f);
             width: 10%;
             transition: width 0.5s ease;
             border-radius: 0 4px 4px 0;
@@ -73,9 +82,6 @@
             flex-direction: column;
             justify-content: space-between;
             overflow-y: auto;
-            background-image: 
-                linear-gradient(rgba(245, 241, 230, 0.9), rgba(245, 241, 230, 0.9)),
-                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         
         .slide.active {
@@ -89,11 +95,12 @@
             padding-right: 15px;
             display: flex;
             flex-direction: column;
+            padding-top: 30px;
         }
 
         .slide-title {
-            color: #5d4037;
-            border-bottom: 3px solid #8b6b4c;
+            color: var(--primary-brown);
+            border-bottom: 3px solid var(--secondary-brown);
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-weight: 700;
@@ -101,6 +108,7 @@
             word-wrap: break-word;
             overflow-wrap: break-word;
             font-size: clamp(1.8em, 4vw, 3em);
+            margin-top: 20px;
         }
 
         .slide-text {
@@ -133,19 +141,18 @@
             cursor: pointer;
             border: none;
             border-radius: 8px;
-            background-color: #8b6b4c;
+            background-color: var(--secondary-brown);
             color: white;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 8px;
             font-size: clamp(0.9em, 1.5vw, 1.1em);
-            visibility: visible !important;
-            opacity: 1 !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .nav-button:hover {
-            background-color: #6d4c41;
+            background-color: var(--primary-brown);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -155,8 +162,6 @@
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
-            visibility: visible !important;
-            opacity: 0.7 !important;
         }
 
         .slide-cover {
@@ -165,10 +170,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            background: linear-gradient(rgba(245, 241, 230, 0.85), rgba(245, 241, 230, 0.85));
         }
 
         .slide-cover h1 {
-            color: #5d4037;
+            color: var(--primary-brown);
             margin-top: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
@@ -179,11 +185,19 @@
         }
         
         .slide-cover h2 {
-            color: #8b6b4c;
-            margin-bottom: 30px;
+            color: var(--secondary-brown);
+            margin-bottom: 20px;
             font-weight: 600;
             line-height: 1.2;
             font-size: clamp(1.5em, 4vw, 2.8em);
+        }
+
+        .image-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .final-slide {
@@ -195,19 +209,19 @@
         }
 
         .final-slide h1 {
-            color: #5d4037;
-            margin-bottom: 40px;
-            margin-top: 80px;
+            color: var(--primary-brown);
+            margin-bottom: 30px;
+            margin-top: 20px;
             line-height: 1.2;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            font-size: clamp(2em, 5vw, 4em);
+            font-size: clamp(1.8em, 4vw, 3em);
         }
 
         .final-slide-buttons {
             display: flex;
             gap: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -225,7 +239,7 @@
         }
 
         .quiz-button {
-            background-color: #5d8c5d;
+            background-color: var(--accent-green);
             color: white;
             border: none;
         }
@@ -236,88 +250,32 @@
         }
 
         .restart-button {
-            background-color: #8b6b4c;
+            background-color: var(--secondary-brown);
             color: white;
             border: none;
         }
 
         .restart-button:hover {
-            background-color: #6d4c41;
+            background-color: var(--primary-brown);
             transform: scale(1.05);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #f9f5f0;
-            font-size: clamp(0.85em, 1.5vw, 1.1em);
-        }
-        
-        th, td {
-            border: 1px solid #d4c9b1;
-            padding: clamp(10px, 2vw, 20px);
-            text-align: left;
-        }
-        
-        th {
-            background-color: #8b6b4c;
-            color: white;
-            font-weight: bold;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f5f1e6;
-        }
-        
-        tr:hover {
-            background-color: #ede7dc;
-        }
-        
-        ul {
-            list-style-type: none;
-            margin-left: 0;
-            padding-left: 0;
-            font-size: clamp(1em, 2vw, 1.4em);
-        }
-        
-        li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-            color: #4e342e;
-        }
-        
-        li::before {
-            content: '➢';
-            color: #8b6b4c;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
-        }
-
         .slide-counter {
-            color: #8b6b4c;
+            color: var(--secondary-brown);
             font-weight: 600;
             font-size: clamp(0.8em, 1.5vw, 1em);
         }
 
         .keyboard-hint {
             text-align: center;
-            color: #8b6b4c;
+            color: var(--secondary-brown);
             margin-bottom: 15px;
             font-size: clamp(0.7em, 1.2vw, 0.9em);
             width: 100%;
         }
 
-        /* Ειδικό στυλ για τη σελίδα 9 */
-        .slide-9-text {
+        /* Ειδικό στυλ για τη σελίδα 11 */
+        .slide-11-text {
             line-height: 1.6;
             text-align: center;
             font-weight: 600;
@@ -331,10 +289,11 @@
             position: absolute;
             top: 15px;
             left: 20px;
-            color: #8b6b4c;
+            color: var(--secondary-brown);
             font-weight: 600;
             letter-spacing: 1px;
             font-size: clamp(0.8em, 1.5vw, 1em);
+            z-index: 5;
         }
 
         /* Νέο κουμπί Κεντρική Σελίδα */
@@ -358,6 +317,97 @@
             background-color: #3a5a9f;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-box {
+            background-color: #f9f5f0;
+            border-left: 5px solid var(--secondary-brown);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Εικόνα Ακρόπολης */
+        .akropolis-image {
+            max-width: 90%;
+            max-height: 70vh;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 20px 0;
+            object-fit: contain;
+        }
+
+        /* Στυλ για λίστες */
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+            font-size: clamp(1em, 2vw, 1.4em);
+        }
+        
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: #4e342e;
+        }
+        
+        li::before {
+            content: '➢';
+            color: var(--secondary-brown);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        .history-period {
+            font-weight: bold;
+            color: var(--primary-brown);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            border-left: 4px solid var(--secondary-brown);
+            padding-left: 15px;
+        }
+
+        /* Στυλ για τη νέα σελίδα ευρημάτων */
+        .findings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            overflow-y: auto;
+            padding: 10px 5px 20px 0;
+        }
+
+        .finding-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .finding-title {
+            color: var(--primary-brown);
+            font-weight: 700;
+            font-size: clamp(1.2em, 3vw, 1.8em);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .finding-image {
+            max-width: 90%;
+            max-height: 40vh;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            object-fit: contain;
         }
 
         /* Βελτιστοποίηση για Smart TV και 4K */
@@ -398,13 +448,6 @@
                 margin: 5px auto;
                 padding: 15px 20px;
             }
-            
-            /* Βελτιστοποίηση πίνακα για κινητά */
-            table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
         }
 
         @media (max-width: 480px) {
@@ -434,12 +477,6 @@
             .central-page-button {
                 width: 100%;
                 justify-content: center;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .slide {
-                padding: 10px;
             }
         }
 
@@ -492,6 +529,7 @@
         <div class="slide-content">
             <h1>Η Ακρόπολη των Φαρσάλων</h1>
             <h2>Ένας Φάρος Ιστορίας στη Θεσσαλία</h2>
+            <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/akropoli-farsalwn.jpg" alt="Ακρόπολη Φαρσάλων" class="akropolis-image">
         </div>
         <div class="slide-footer">
             <div class="keyboard-hint">
@@ -508,19 +546,20 @@
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 1 από 10</div>
+            <div class="slide-counter">Σελίδα 1 από 12</div>
         </div>
     </div>
 
-    <!-- Οι υπόλοιπες διαφάνειες παραμένουν ίδιες -->
     <!-- Slide 2: Η Αρχαία Φάρσαλος και η Ακρόπολη -->
     <div class="slide" id="slide-2">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
             <h2 class="slide-title">Η Αρχαία Φάρσαλος και η Ακρόπολη</h2>
-            <p class="slide-text">
-                Η Ακρόπολη των Φαρσάλων: Από τη μυθική Φθία στο Βυζάντιο.
-            </p>
+            <div class="highlight-box">
+                <p class="slide-text">
+                    Η Ακρόπολη των Φαρσάλων: Από τη μυθική Φθία στο Βυζάντιο.
+                </p>
+            </div>
             <p class="slide-text">
                 Βρίσκεται στον λόφο του <strong>Προφήτη Ηλία</strong>, στο νοτιότερο και υψηλότερο σημείο της σύγχρονης πόλης των Φαρσάλων (Νομός Λάρισας, Θεσσαλία).
             </p>
@@ -547,19 +586,16 @@
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 2 από 10</div>
+            <div class="slide-counter">Σελίδα 2 από 12</div>
         </div>
     </div>
 
-    <!-- Slide 3: Προϊστορική Κατοίκηση και Μυθική Σύνδεση -->
-    <div class="slide" id="slide-3">
+    <!-- Slide 3: Νέα σελίδα με εικόνα -->
+    <div class="slide image-slide" id="slide-3">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
-            <h2 class="slide-title">Προϊστορική Κατοίκηση και Μυθική Σύνδεση</h2>
-            <ul>
-                <li><strong>Προϊστορική Κατοίκηση</strong>: Η περιοχή κατοικείται αδιάλειπτα από τη <strong>Νεολιθική περίοδο</strong> (περίπου 4000 π.Χ.).</li>
-                <li><strong>Μυθική Σύνδεση</strong>: Η περιοχή ταυτίζεται με τη μυκηναϊκή, ομηρική <strong>Φθία</strong>, την πατρίδα του μυθικού ήρωα <strong>Αχιλλέα</strong> και των Μυρμιδόνων.</li>
-            </ul>
+            <h2 class="slide-title">Ακρόπολη Φαρσάλων</h2>
+            <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/EFA_Larisas_AkrFarsalon_BA.jpg" alt="Ακρόπολη Φαρσάλων" class="akropolis-image">
         </div>
         <div class="slide-footer">
             <div class="keyboard-hint">
@@ -576,20 +612,18 @@
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 3 από 10</div>
+            <div class="slide-counter">Σελίδα 3 από 12</div>
         </div>
     </div>
-    
-    <!-- Slide 4: Περιγραφή του Χώρου -->
+
+    <!-- Slide 4: Προϊστορική Κατοίκηση και Μυθική Σύνδεση -->
     <div class="slide" id="slide-4">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
-            <h2 class="slide-title">Περιγραφή του Χώρου</h2>
+            <h2 class="slide-title">Προϊστορική Κατοίκηση και Μυθική Σύνδεση</h2>
             <ul>
-                <li><strong>Μορφολογία</strong>: Η ακρόπολη έχει <strong>επίμηκες σχήμα</strong> (περίπου 500-550 μέτρα μήκος) και αποτελείται από <strong>δύο πλατώματα (εξάρματα)</strong> που χωρίζονται από ένα στενό διάσελο.</li>
-                <li><strong>Κύριος Ρόλος</strong>: Καθαρά <strong>στρατιωτικοί-αμυντικοί</strong> σκοποί.</li>
-                <li><strong>Οχύρωση</strong>: Τα σωζόμενα τείχη είναι εντυπωσιακά, κατασκευασμένα με μεγάλους ογκόλιθους, ακολουθώντας την <strong>πολυγωνική και ισοδομική τεχνική</strong>.</li>
-                <li><strong>Πρόσβαση</strong>: Στην αρχαία ακρόπολη η πρόσβαση γινόταν από <strong>δύο πύλες</strong> στο στενό διάσελο (βόρεια για επικοινωνία με την πόλη, νότια για έξοδο).</li>
+                <li><strong>Προϊστορική Κατοίκηση</strong>: Η περιοχή κατοικείται αδιάλειπτα από τη <strong>Νεολιθική περίοδο</strong> (περίπου 4000 π.Χ.).</li>
+                <li><strong>Μυθική Σύνδεση</strong>: Η περιοχή ταυτίζεται με τη μυκηναϊκή, ομηρική <strong>Φθία</strong>, την πατρίδα του μυθικού ήρωα <strong>Αχιλλέα</strong> και των Μυρμιδόνων.</li>
             </ul>
         </div>
         <div class="slide-footer">
@@ -607,20 +641,20 @@
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 4 από 10</div>
+            <div class="slide-counter">Σελίδα 4 από 12</div>
         </div>
     </div>
-
-    <!-- Slide 5: Φάσεις Οχύρωσης -->
+    
+    <!-- Slide 5: Περιγραφή του Χώρου -->
     <div class="slide" id="slide-5">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
-            <h2 class="slide-title">Φάσεις Οχύρωσης</h2>
-            <p class="slide-text">Διακρίνονται τουλάχιστον <strong>3 κύριες φάσεις</strong> οχύρωσης:</p>
+            <h2 class="slide-title">Περιγραφή του Χώρου</h2>
             <ul>
-                <li><strong>Υστεροαρχαϊκή Εποχή</strong> (τέλη 6ου - 5ου αι. π.Χ.): Η αρχική οχύρωση, ένδειξη της ακμής της πόλης.</li>
-                <li><strong>4ος αι. π.Χ. (Ελληνιστική)</strong>: Σημαντική ενίσχυση του τείχους με <strong>πύργους</strong> και άνοιγμα πυλών/πυλίδων.</li>
-                <li><strong>Παλαιοχριστιανικά/Βυζαντινά Χρόνια</strong>: Μετασκευές και προσθήκες, μετατρέποντας την ακρόπολη σε <strong>καστροπολιτεία</strong>.</li>
+                <li><strong>Μορφολογία</strong>: Η ακρόπολη έχει <strong>επίμηκες σχήμα</strong> (περίπου 500-550 μέτρα μήκος) και αποτελείται από <strong>δύο πλατώματα (εξάρματα)</strong> που χωρίζονται από ένα στενό διάσελο.</li>
+                <li><strong>Κύριος Ρόλος</strong>: Καθαρά <strong>στρατιωτικοί-αμυντικοί</strong> σκοποί.</li>
+                <li><strong>Οχύρωση</strong>: Τα σωζόμενα τείχη είναι εντυπωσιακά, κατασκευασμένα με μεγάλους ογκόλιθους, ακολουθώντας την <strong>πολυγωνική και ισοδομική τεχνική</strong>.</li>
+                <li><strong>Πρόσβαση</strong>: Στην αρχαία ακρόπολη η πρόσβαση γινόταν από <strong>δύο πύλες</strong> στο στενό διάσελο (βόρεια για επικοινωνία με την πόλη, νότια για έξοδο).</li>
             </ul>
         </div>
         <div class="slide-footer">
@@ -638,42 +672,21 @@
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 5 από 10</div>
+            <div class="slide-counter">Σελίδα 5 από 12</div>
         </div>
     </div>
 
-    <!-- Slide 6: Ιστορική Εξέλιξη (Προϊστορία - Ρωμαϊκή Εποχή) -->
+    <!-- Slide 6: Φάσεις Οχύρωσης -->
     <div class="slide" id="slide-6">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
-            <h2 class="slide-title">Ιστορική Εξέλιξη (Προϊστορία - Ρωμαϊκή Εποχή)</h2>
-            <p class="slide-text">Σημαντικά γεγονότα και ευρήματα στην Ακρόπολη και την πόλη:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Εποχή</th>
-                        <th>Περίοδος</th>
-                        <th>Γεγονότα - Ευρήματα στην Ακρόπολη/Πόλη</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Προϊστορία</strong></td>
-                        <td>Νεολιθική - Μυκηναϊκή</td>
-                        <td>Κατοίκηση του χώρου. Ταύτιση με τη μυθική <strong>Φθία του Αχιλλέα</strong>. Μυκηναϊκός θαλαμοειδής τάφος.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Αρχαιότητα</strong></td>
-                        <td>6ος - 4ος αι. π.Χ.</td>
-                        <td><strong>Οχύρωση της ακρόπολης</strong> (6ος αι.). Η Φάρσαλος γίνεται ισχυρή πόλη-κράτος. Θολωτός τάφος με πλούσια κτερίσματα (όπως κρατήρας του ζωγράφου <strong>Εξηκία</strong>).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ρωμαϊκή</strong></td>
-                        <td>1ος αι. π.Χ.</td>
-                        <td>Στενή σχέση με τη <strong>Μάχη των Φαρσάλων</strong> (48 π.Χ.) ανάμεσα στον Ιούλιο Καίσαρα και τον Πομπήιο, η οποία διαμόρφωσε την ιστορία της Ρωμαϊκής Δημοκρατίας.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2 class="slide-title">Φάσεις Οχύρωσης</h2>
+            <p class="slide-text">Διακρίνονται τουλάχιστον <strong>3 κύριες φάσεις</strong> οχύρωσης:</p>
+            <ul>
+                <li><strong>Υστεροαρχαϊκή Εποχή</strong> (τέλη 6ου - 5ου αι. π.Χ.): Η αρχική οχύρωση, ένδειξη της ακμής της πόλης.</li>
+                <li><strong>4ος αι. π.Χ. (Ελληνιστική)</strong>: Σημαντική ενίσχυση του τείχους με <strong>πύργους</strong> και άνοιγμα πυλών/πυλίδων.</li>
+                <li><strong>Παλαιοχριστιανικά/Βυζαντινά Χρόνια</strong>: Μετασκευές και προσθήκες, μετατρέποντας την ακρόπολη σε <strong>καστροπολιτεία</strong>.</li>
+            </ul>
         </div>
         <div class="slide-footer">
             <div class="keyboard-hint">
@@ -690,37 +703,34 @@
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 6 από 10</div>
+            <div class="slide-counter">Σελίδα 6 από 12</div>
         </div>
     </div>
 
-    <!-- Slide 7: Ιστορική Εξέλιξη (Βυζάντιο - Μετα-Βυζάντιο) -->
+    <!-- Slide 7: Ιστορική Εξέλιξη (Προϊστορία - Ρωμαϊκή Εποχή) -->
     <div class="slide" id="slide-7">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
-            <h2 class="slide-title">Ιστορική Εξέλιξη (Βυζάντιο - Μετα-Βυζάντιο)</h2>
+            <h2 class="slide-title">Ιστορική Εξέλιξη (Προϊστορία - Ρωμαϊκή Εποχή)</h2>
             <p class="slide-text">Σημαντικά γεγονότα και ευρήματα στην Ακρόπολη και την πόλη:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Εποχή</th>
-                        <th>Περίοδος</th>
-                        <th>Γεγονότα - Ευρήματα στην Ακρόπολη/Πόλη</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Βυζάντιο</strong></td>
-                        <td>Μεσαίωνας</td>
-                        <td>Η Ακρόπολη γίνεται <strong>καστροπολιτεία</strong>. Κατασκευάζονται <strong>δεξαμενές για ύδρευση</strong>. Η πόλη συμμετέχει στους αγώνες του Βυζαντίου.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Μετα-Βυζάντιο</strong></td>
-                        <td>Φραγκοκρατία - Τουρκοκρατία</td>
-                        <td>Η πόλη περνά διαδοχικά σε <strong>Φράγκους, Καταλανούς, Σέρβους</strong> (Στέφανος Δουσάν, 14ος αι.) και τέλος στους <strong>Οθωμανούς</strong> (τέλη 14ου αι.).</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="history-period">Προϊστορία</div>
+            <ul>
+                <li><strong>Περίοδος</strong>: Νεολιθική - Μυκηναϊκή</li>
+                <li><strong>Γεγονότα - Ευρήματα</strong>: Κατοίκηση του χώρου. Ταύτιση με τη μυθική <strong>Φθία του Αχιλλέα</strong>. Μυκηναϊκός θαλαμοειδής τάφος.</li>
+            </ul>
+            
+            <div class="history-period">Αρχαιότητα</div>
+            <ul>
+                <li><strong>Περίοδος</strong>: 6ος - 4ος αι. π.Χ.</li>
+                <li><strong>Γεγονότα - Ευρήματα</strong>: <strong>Οχύρωση της ακρόπολης</strong> (6ος αι.). Η Φάρσαλος γίνεται ισχυρή πόλη-κράτος. Θολωτός τάφος με πλούσια κτερίσματα (όπως κρατήρας του ζωγράφου <strong>Εξηκία</strong>).</li>
+            </ul>
+            
+            <div class="history-period">Ρωμαϊκή</div>
+            <ul>
+                <li><strong>Περίοδος</strong>: 1ος αι. π.Χ.</li>
+                <li><strong>Γεγονότα - Ευρήματα</strong>: Στενή σχέση με τη <strong>Μάχη των Φαρσάλων</strong> (48 π.Χ.) ανάμεσα στον Ιούλιο Καίσαρα και τον Πομπήιο, η οποία διαμόρφωσε την ιστορία της Ρωμαϊκής Δημοκρατίας.</li>
+            </ul>
         </div>
         <div class="slide-footer">
             <div class="keyboard-hint">
@@ -737,12 +747,85 @@
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 7 από 10</div>
+            <div class="slide-counter">Σελίδα 7 από 12</div>
         </div>
     </div>
 
-    <!-- Slide 8: Αρχαιολογική Σημασία και Ανάδειξη -->
+    <!-- Slide 8: Νέα σελίδα "Ευρήματα" -->
     <div class="slide" id="slide-8">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
+        <div class="slide-content">
+            <h2 class="slide-title">Ευρήματα</h2>
+            <div class="findings-container">
+                <div class="finding-item">
+                    <div class="finding-title">Θολωτός Τάφος</div>
+                    <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/-%CE%A4%CE%91%CE%A6%CE%9F%CE%A3-%CE%A6%CE%91%CE%A1%CE%A3%CE%91%CE%9B%CE%A9%CE%9D-2-of-7-2-e1590652832167.jpg" alt="Θολωτός Τάφος" class="finding-image">
+                </div>
+                <div class="finding-item">
+                    <div class="finding-title">Αττικός μελανόμορφος καλυκωτός κρατήρας Εξηκία</div>
+                    <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/krater.png" alt="Αττικός μελανόμορφος καλυκωτός κρατήρας Εξηκία" class="finding-image">
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <div class="keyboard-hint">
+                <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-button" id="prev-btn-8" onclick="changeSlide(-1)">
+                    <i class="fas fa-arrow-left"></i> Προηγούμενη
+                </button>
+                <button class="nav-button" id="next-btn-8" onclick="changeSlide(1)">
+                    Επόμενη <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 8 από 12</div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Ιστορική Εξέλιξη (Βυζάντιο - Μετα-Βυζάντιο) -->
+    <div class="slide" id="slide-9">
+        <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
+        <div class="slide-content">
+            <h2 class="slide-title">Ιστορική Εξέλιξη (Βυζάντιο - Μετα-Βυζάντιο)</h2>
+            <p class="slide-text">Σημαντικά γεγονότα και ευρήματα στην Ακρόπολη και την πόλη:</p>
+            
+            <div class="history-period">Βυζάντιο</div>
+            <ul>
+                <li><strong>Περίοδος</strong>: Μεσαίωνας</li>
+                <li><strong>Γεγονότα - Ευρήματα</strong>: Η Ακρόπολη γίνεται <strong>καστροπολιτεία</strong>. Κατασκευάζονται <strong>δεξαμενές για ύδρευση</strong>. Η πόλη συμμετέχει στους αγώνες του Βυζαντίου.</li>
+            </ul>
+            
+            <div class="history-period">Μετα-Βυζάντιο</div>
+            <ul>
+                <li><strong>Περίοδος</strong>: Φραγκοκρατία - Τουρκοκρατία</li>
+                <li><strong>Γεγονότα - Ευρήματα</strong>: Η πόλη περνά διαδοχικά σε <strong>Φράγκους, Καταλανούς, Σέρβους</strong> (Στέφανος Δουσάν, 14ος αι.) και τέλος στους <strong>Οθωμανούς</strong> (τέλη 14ου αι.).</li>
+            </ul>
+        </div>
+        <div class="slide-footer">
+            <div class="keyboard-hint">
+                <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-button" id="prev-btn-9" onclick="changeSlide(-1)">
+                    <i class="fas fa-arrow-left"></i> Προηγούμενη
+                </button>
+                <button class="nav-button" id="next-btn-9" onclick="changeSlide(1)">
+                    Επόμενη <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
+                <i class="fas fa-home"></i> Κεντρική Σελίδα
+            </a>
+            <div class="slide-counter">Σελίδα 9 από 12</div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Αρχαιολογική Σημασία και Ανάδειξη -->
+    <div class="slide" id="slide-10">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
             <h2 class="slide-title">Αρχαιολογική Σημασία και Ανάδειξη</h2>
@@ -767,28 +850,28 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-8" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-10" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-8" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-10" onclick="changeSlide(1)">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 8 από 10</div>
+            <div class="slide-counter">Σελίδα 10 από 12</div>
         </div>
     </div>
     
-    <!-- Slide 9: Συμπέρασμα -->
-    <div class="slide" id="slide-9">
+    <!-- Slide 11: Συμπέρασμα -->
+    <div class="slide" id="slide-11">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <p class="slide-9-text">
+            <p class="slide-11-text">
                 Η <strong>Ακρόπολη των Φαρσάλων</strong> είναι ένα διαχρονικό οχυρωματικό έργο που αποτελεί <strong>ζωντανή μαρτυρία της μακραίωνης ιστορίας της πόλης</strong>, από τη μυθική Φθία μέχρι τη Βυζαντινή καστροπολιτεία.
             </p>
-            <p class="slide-9-text">
+            <p class="slide-11-text">
                 Η επίσκεψη εκεί προσφέρει ένα μοναδικό ταξίδι στον χρόνο και μια εκπληκτική θέα στη θεσσαλική γη.
             </p>
         </div>
@@ -797,22 +880,22 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-9" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-11" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-9" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-11" onclick="changeSlide(1)">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 9 από 10</div>
+            <div class="slide-counter">Σελίδα 11 από 12</div>
         </div>
     </div>
 
-    <!-- Slide 10: Τέλος/Ερωτήσεις -->
-    <div class="slide final-slide" id="slide-10">
+    <!-- Slide 12: Τέλος/Ερωτήσεις -->
+    <div class="slide final-slide" id="slide-12">
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
             <h1>Σας ευχαριστούμε που παρακολουθήσατε την παρουσίαση!</h1>
@@ -835,17 +918,17 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-10" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-12" onclick="changeSlide(-1)">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-10" onclick="changeSlide(1)" disabled>
+                <button class="nav-button" id="next-btn-12" onclick="changeSlide(1)" disabled>
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
             <a href="https://conchr.github.io/Farsala-Center-Page/" class="central-page-button">
                 <i class="fas fa-home"></i> Κεντρική Σελίδα
             </a>
-            <div class="slide-counter">Σελίδα 10 από 10</div>
+            <div class="slide-counter">Σελίδα 12 από 12</div>
         </div>
     </div>
 </div>
