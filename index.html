@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Διαδραστική παρουσίαση για την Ακρόπολη των Φαρσάλων">
     <title>Η Ακρόπολη των Φαρσάλων | Διαδραστική Παρουσίαση</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -13,6 +14,8 @@
             --light-beige: #f5f1e6;
             --accent-green: #5d8c5d;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition-duration: 0.6s;
+            --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
         * {
@@ -73,11 +76,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            padding: 40px 60px;
+            padding: 30px 50px;
             box-sizing: border-box;
             opacity: 0;
             transform: translateX(100%);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity var(--transition-duration) var(--transition-timing), 
+                        transform var(--transition-duration) var(--transition-timing);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -95,7 +99,7 @@
             padding-right: 15px;
             display: flex;
             flex-direction: column;
-            padding-top: 30px;
+            padding-top: 20px;
         }
 
         .slide-title {
@@ -108,7 +112,7 @@
             word-wrap: break-word;
             overflow-wrap: break-word;
             font-size: clamp(1.8em, 4vw, 3em);
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .slide-text {
@@ -120,13 +124,14 @@
         }
 
         .slide-footer {
-            padding-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid #d4c9b1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-shrink: 0;
+            margin-top: 10px;
         }
         
         .nav-buttons {
@@ -137,7 +142,7 @@
         }
         
         .nav-button {
-            padding: 12px 24px;
+            padding: 10px 20px;
             cursor: pointer;
             border: none;
             border-radius: 8px;
@@ -147,7 +152,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: clamp(0.9em, 1.5vw, 1.1em);
+            font-size: clamp(0.85em, 1.5vw, 1em);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
@@ -175,7 +180,7 @@
 
         .slide-cover h1 {
             color: var(--primary-brown);
-            margin-top: 20px;
+            margin-top: 15px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
@@ -186,7 +191,7 @@
         
         .slide-cover h2 {
             color: var(--secondary-brown);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 600;
             line-height: 1.2;
             font-size: clamp(1.5em, 4vw, 2.8em);
@@ -210,8 +215,8 @@
 
         .final-slide h1 {
             color: var(--primary-brown);
-            margin-bottom: 30px;
-            margin-top: 20px;
+            margin-bottom: 25px;
+            margin-top: 15px;
             line-height: 1.2;
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -221,13 +226,13 @@
         .final-slide-buttons {
             display: flex;
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .final-slide-buttons button {
-            padding: 18px 35px;
+            padding: 15px 30px;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s;
@@ -235,7 +240,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: clamp(1.1em, 2vw, 1.5em);
+            font-size: clamp(1em, 2vw, 1.4em);
         }
 
         .quiz-button {
@@ -263,14 +268,14 @@
         .slide-counter {
             color: var(--secondary-brown);
             font-weight: 600;
-            font-size: clamp(0.8em, 1.5vw, 1em);
+            font-size: clamp(0.75em, 1.5vw, 0.9em);
         }
 
         .keyboard-hint {
             text-align: center;
             color: var(--secondary-brown);
-            margin-bottom: 15px;
-            font-size: clamp(0.7em, 1.2vw, 0.9em);
+            margin-bottom: 12px;
+            font-size: clamp(0.65em, 1.2vw, 0.8em);
             width: 100%;
         }
 
@@ -280,25 +285,25 @@
             text-align: center;
             font-weight: 600;
             color: #4e342e;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: clamp(1.2em, 3vw, 2.4em);
         }
 
         /* Νέο στυλ για την επικεφαλίδα ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025 */
         .municipality-header {
             position: absolute;
-            top: 15px;
+            top: 12px;
             left: 20px;
             color: var(--secondary-brown);
             font-weight: 600;
             letter-spacing: 1px;
-            font-size: clamp(0.8em, 1.5vw, 1em);
+            font-size: clamp(0.75em, 1.5vw, 0.9em);
             z-index: 5;
         }
 
         /* Νέο κουμπί Κεντρική Σελίδα */
         .central-page-button {
-            padding: 10px 20px;
+            padding: 8px 16px;
             cursor: pointer;
             border: none;
             border-radius: 8px;
@@ -310,7 +315,7 @@
             gap: 8px;
             margin-top: 5px;
             text-decoration: none;
-            font-size: clamp(0.9em, 1.5vw, 1.1em);
+            font-size: clamp(0.85em, 1.5vw, 1em);
         }
         
         .central-page-button:hover {
@@ -322,8 +327,8 @@
         .highlight-box {
             background-color: #f9f5f0;
             border-left: 5px solid var(--secondary-brown);
-            padding: 20px;
-            margin: 20px 0;
+            padding: 18px;
+            margin: 18px 0;
             border-radius: 0 8px 8px 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
@@ -336,7 +341,7 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            margin: 20px 0;
+            margin: 15px 0;
             object-fit: contain;
         }
 
@@ -349,7 +354,7 @@
         }
         
         li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
             color: #4e342e;
@@ -369,8 +374,8 @@
         .history-period {
             font-weight: bold;
             color: var(--primary-brown);
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-top: 18px;
+            margin-bottom: 8px;
             font-size: 1.2em;
             border-left: 4px solid var(--secondary-brown);
             padding-left: 15px;
@@ -380,16 +385,16 @@
         .findings-container {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
             overflow-y: auto;
-            padding: 10px 5px 20px 0;
+            padding: 10px 5px 15px 0;
         }
 
         .finding-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .finding-title {
@@ -397,7 +402,7 @@
             font-weight: 700;
             font-size: clamp(1.2em, 3vw, 1.8em);
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .finding-image {
@@ -418,11 +423,12 @@
             }
             
             .slide {
-                padding: 60px 80px;
+                padding: 50px 70px;
             }
         }
 
-        @media (max-width: 768px) {
+        /* Βελτιστοποίηση για κινητά σε portrait */
+        @media (max-width: 768px) and (orientation: portrait) {
             .presentation-container {
                 width: 98%;
                 height: 90vh;
@@ -430,11 +436,11 @@
             }
             
             .slide {
-                padding: 20px;
+                padding: 15px;
             }
             
             .final-slide h1 {
-                margin-top: 40px;
+                margin-top: 30px;
             }
             
             .final-slide-buttons {
@@ -446,11 +452,49 @@
             .final-slide-buttons button {
                 width: 90%;
                 margin: 5px auto;
-                padding: 15px 20px;
+                padding: 12px 18px;
+            }
+            
+            .akropolis-image, .finding-image {
+                max-height: 55vh;
             }
         }
 
-        @media (max-width: 480px) {
+        /* Βελτιστοποίηση για κινητά σε landscape */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .presentation-container {
+                width: 98%;
+                height: 95vh;
+                max-width: 100%;
+            }
+            
+            .slide {
+                padding: 15px 20px;
+            }
+            
+            .slide-title {
+                margin-bottom: 15px;
+                margin-top: 10px;
+            }
+            
+            .slide-text {
+                margin-bottom: 10px;
+            }
+            
+            .slide-footer {
+                padding-top: 10px;
+            }
+            
+            .akropolis-image, .finding-image {
+                max-height: 50vh;
+            }
+            
+            .nav-button, .central-page-button {
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: portrait) {
             body {
                 padding: 10px;
             }
@@ -461,12 +505,12 @@
             }
             
             .slide {
-                padding: 15px;
+                padding: 12px;
             }
             
             .nav-buttons {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
             }
             
             .nav-button {
@@ -478,6 +522,10 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            .akropolis-image, .finding-image {
+                max-height: 50vh;
+            }
         }
 
         /* Βελτιστοποίηση για οριζόντια κινητά */
@@ -487,19 +535,31 @@
             }
             
             .slide {
-                padding: 15px 30px;
+                padding: 12px 25px;
             }
             
             .slide-title {
-                margin-bottom: 10px;
+                margin-bottom: 8px;
+                margin-top: 5px;
+                font-size: clamp(1.5em, 3.5vw, 2.5em);
             }
             
             .slide-text {
                 margin-bottom: 8px;
+                font-size: clamp(0.9em, 1.8vw, 1.2em);
             }
             
             .slide-footer {
-                padding-top: 10px;
+                padding-top: 8px;
+            }
+            
+            .akropolis-image, .finding-image {
+                max-height: 45vh;
+            }
+            
+            .nav-button, .central-page-button {
+                padding: 6px 12px;
+                font-size: 0.8em;
             }
         }
 
@@ -511,19 +571,19 @@
             }
             
             .slide {
-                padding: 80px 100px;
+                padding: 70px 90px;
             }
         }
 
         /* ΕΙΔΙΚΑ ΣΤΥΛ ΓΙΑ ΤΗΝ ΤΕΛΙΚΗ ΣΕΛΙΔΑ */
         #slide-12.final-slide {
-            padding: 20px 40px;
+            padding: 15px 35px;
             justify-content: space-between;
         }
 
         #slide-12 .slide-content {
             flex-grow: 0.5;
-            padding-top: 10px;
+            padding-top: 8px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -533,59 +593,59 @@
         #slide-12 h1 {
             font-size: clamp(1.4em, 3.5vw, 2.5em);
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.3;
         }
 
         #slide-12 .final-slide-buttons {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         #slide-12 .final-slide-buttons button {
-            padding: 12px 20px;
+            padding: 10px 18px;
             font-size: clamp(0.9em, 1.8vw, 1.2em);
         }
 
         #slide-12 .slide-footer {
-            padding-top: 10px;
+            padding-top: 8px;
         }
 
         #slide-12 .keyboard-hint {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 768px) and (orientation: portrait) {
             #slide-12.final-slide {
-                padding: 15px;
+                padding: 12px;
             }
             
             #slide-12 .final-slide-buttons {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
             }
             
             #slide-12 .final-slide-buttons button {
                 width: 100%;
-                padding: 10px 15px;
+                padding: 8px 12px;
             }
         }
 
         @media (max-height: 600px) {
             #slide-12.final-slide {
-                padding: 10px 30px;
+                padding: 8px 25px;
             }
             
             #slide-12 h1 {
                 font-size: clamp(1.2em, 3vw, 2em);
-                margin-bottom: 15px;
+                margin-bottom: 12px;
             }
             
             #slide-12 .final-slide-buttons {
-                margin-bottom: 10px;
+                margin-bottom: 8px;
             }
             
             #slide-12 .final-slide-buttons button {
-                padding: 8px 15px;
+                padding: 6px 12px;
             }
         }
     </style>
@@ -603,17 +663,17 @@
         <div class="slide-content">
             <h1>Η Ακρόπολη των Φαρσάλων</h1>
             <h2>Ένας Φάρος Ιστορίας στη Θεσσαλία</h2>
-            <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/akropoli-farsalwn.jpg" alt="Ακρόπολη Φαρσάλων" class="akropolis-image">
+            <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/akropoli-farsalwn.jpg" alt="Ακρόπολη Φαρσάλων" class="akropolis-image" loading="lazy">
         </div>
         <div class="slide-footer">
             <div class="keyboard-hint">
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-1" onclick="changeSlide(-1)" disabled>
+                <button class="nav-button" id="prev-btn-1" onclick="changeSlide(-1)" disabled aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-1" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-1" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -650,10 +710,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-2" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-2" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-2" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-2" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -669,17 +729,17 @@
         <div class="municipality-header">ΔΗΜΟΣ ΦΑΡΣΑΛΩΝ 2025</div>
         <div class="slide-content">
             <h2 class="slide-title">Ακρόπολη Φαρσάλων</h2>
-            <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/EFA_Larisas_AkrFarsalon_BA.jpg" alt="Ακρόπολη Φαρσάλων" class="akropolis-image">
+            <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/EFA_Larisas_AkrFarsalon_BA.jpg" alt="Ακρόπολη Φαρσάλων" class="akropolis-image" loading="lazy">
         </div>
         <div class="slide-footer">
             <div class="keyboard-hint">
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-3" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-3" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-3" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-3" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -705,10 +765,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-4" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-4" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-4" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-4" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -736,10 +796,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-5" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-5" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-5" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-5" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -767,10 +827,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-6" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-6" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-6" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-6" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -811,10 +871,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-7" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-7" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-7" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-7" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -833,11 +893,11 @@
             <div class="findings-container">
                 <div class="finding-item">
                     <div class="finding-title">Θολωτός Τάφος</div>
-                    <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/-%CE%A4%CE%91%CE%A6%CE%9F%CE%A3-%CE%A6%CE%91%CE%A1%CE%A3%CE%91%CE%9B%CE%A9%CE%9D-2-of-7-2-e1590652832167.jpg" alt="Θολωτός Τάφος" class="finding-image">
+                    <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/-%CE%A4%CE%91%CE%A6%CE%9F%CE%A3-%CE%A6%CE%91%CE%A1%CE%A3%CE%91%CE%9B%CE%A9%CE%9D-2-of-7-2-e1590652832167.jpg" alt="Θολωτός Τάφος" class="finding-image" loading="lazy">
                 </div>
                 <div class="finding-item">
                     <div class="finding-title">Αττικός μελανόμορφος καλυκωτός κρατήρας Εξηκία</div>
-                    <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/krater.png" alt="Αττικός μελανόμορφος καλυκωτός κρατήρας Εξηκία" class="finding-image">
+                    <img src="https://github.com/conchr/Acropolis-Presentation/raw/main/krater.png" alt="Αττικός μελανόμορφος καλυκωτός κρατήρας Εξηκία" class="finding-image" loading="lazy">
                 </div>
             </div>
         </div>
@@ -846,10 +906,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-8" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-8" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-8" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-8" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -884,10 +944,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-9" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-9" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-9" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-9" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -924,10 +984,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-10" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-10" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-10" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-10" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -954,10 +1014,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-11" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-11" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-11" onclick="changeSlide(1)">
+                <button class="nav-button" id="next-btn-11" onclick="changeSlide(1)" aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -978,7 +1038,7 @@
             </div>
         </div>
         <div class="final-slide-buttons">
-            <a href="https://conchr.github.io/Acropolis/" target="_blank">
+            <a href="https://conchr.github.io/Acropolis-Quiz/">
                 <button class="quiz-button">
                     <i class="fas fa-question-circle"></i> Θέλετε να κάνετε το Quiz γνώσεων;
                 </button>
@@ -992,10 +1052,10 @@
                 <i class="fas fa-info-circle"></i> Χρησιμοποιήστε τα βέλη για πλοήγηση
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" id="prev-btn-12" onclick="changeSlide(-1)">
+                <button class="nav-button" id="prev-btn-12" onclick="changeSlide(-1)" aria-label="Προηγούμενη σελίδα">
                     <i class="fas fa-arrow-left"></i> Προηγούμενη
                 </button>
-                <button class="nav-button" id="next-btn-12" onclick="changeSlide(1)" disabled>
+                <button class="nav-button" id="next-btn-12" onclick="changeSlide(1)" disabled aria-label="Επόμενη σελίδα">
                     Επόμενη <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -1013,6 +1073,10 @@
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     const progressBar = document.getElementById('progress-bar');
+
+    // Variables for touch gestures
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     /**
      * Updates the display to show the current slide and hide others.
@@ -1098,7 +1162,7 @@
             const oldSlide = document.getElementById(`slide-${currentSlideIndex}`);
             if (oldSlide) {
                 // Ensure the transition property is active for the move-out effect
-                oldSlide.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out'; 
+                oldSlide.style.transition = 'opacity var(--transition-duration) var(--transition-timing), transform var(--transition-duration) var(--transition-timing)'; 
                 if (step === 1) {
                     // Moving forward: old slide slides left and fades out
                     oldSlide.style.transform = 'translateX(-100%)';
@@ -1121,7 +1185,7 @@
                  // After a very short delay (to ensure the transform is set before the transition starts)
                  // apply the active class, triggering the smooth slide-in
                  setTimeout(() => {
-                    newSlide.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    newSlide.style.transition = 'opacity var(--transition-duration) var(--transition-timing), transform var(--transition-duration) var(--transition-timing)';
                     newSlide.classList.add('active');
                     newSlide.style.transform = 'translateX(0)';
                     newSlide.style.opacity = 1;
@@ -1154,6 +1218,36 @@
         }
     });
 
+    /**
+     * Handles touch gestures for mobile navigation
+     */
+    document.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance for a swipe to be recognized
+        
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left - next slide
+            if (currentSlideIndex < totalSlides) {
+                changeSlide(1);
+            }
+        }
+        
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right - previous slide
+            if (currentSlideIndex > 1) {
+                changeSlide(-1);
+            }
+        }
+    }
+
     // Initial load call
     window.onload = () => {
         // Initialize all slides to their inactive state (to the right, opacity 0)
@@ -1167,7 +1261,7 @@
         // Use a short timeout to re-enable transitions and show the first slide smoothly
         setTimeout(() => {
             slides.forEach(slide => {
-                slide.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                slide.style.transition = 'opacity var(--transition-duration) var(--transition-timing), transform var(--transition-duration) var(--transition-timing)';
             });
             showSlide();
         }, 100);
